@@ -122,5 +122,5 @@ export class DefaultDialogSettings implements DialogSettings {
   public rejectOnCancel = false;
   public ignoreTransitions = false;
   public position?: (dialogContainer: Element, dialogOverlay: Element) => void;
-  public restoreFocus = (lastActiveElement: HTMLElement) => lastActiveElement.focus();
+  public restoreFocus = (lastActiveElement: HTMLElement) => { if (lastActiveElement) { lastActiveElement.focus(); } }
 }
