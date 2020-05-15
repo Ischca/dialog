@@ -1,4 +1,4 @@
-System.register(['aurelia-pal', 'aurelia-dependency-injection'], function (exports, module) {
+System.register(['aurelia-pal', 'aurelia-dependency-injection'], function (exports) {
   'use strict';
   var DOM, transient;
   return {

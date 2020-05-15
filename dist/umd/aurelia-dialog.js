@@ -26,7 +26,9 @@
           this.centerHorizontalOnly = false;
           this.rejectOnCancel = false;
           this.ignoreTransitions = false;
-          this.restoreFocus = function (lastActiveElement) { return lastActiveElement.focus(); };
+          this.restoreFocus = function (lastActiveElement) { if (lastActiveElement) {
+              lastActiveElement.focus();
+          } };
       }
       return DefaultDialogSettings;
   }());

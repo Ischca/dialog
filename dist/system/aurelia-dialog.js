@@ -1,17 +1,17 @@
-System.register(['./chunk.js', 'aurelia-pal', 'aurelia-dependency-injection', 'aurelia-templating'], function (exports, module) {
+System.register(['./dialog-controller.js', 'aurelia-pal', 'aurelia-dependency-injection', 'aurelia-templating'], function (exports, module) {
   'use strict';
   var Renderer, createDialogCancelError, invokeLifecycle, DialogController, DOM, Container, ViewSlot, CompositionEngine;
   return {
     setters: [function (module) {
-      Renderer = module.a;
-      createDialogCancelError = module.b;
-      invokeLifecycle = module.c;
-      DialogController = module.d;
+      Renderer = module.R;
+      createDialogCancelError = module.c;
+      invokeLifecycle = module.i;
+      DialogController = module.D;
       var _setter = {};
-      _setter.DialogController = module.d;
-      _setter.Renderer = module.a;
-      _setter.createDialogCancelError = module.b;
-      _setter.createDialogCloseError = module.e;
+      _setter.DialogController = module.D;
+      _setter.Renderer = module.R;
+      _setter.createDialogCancelError = module.c;
+      _setter.createDialogCloseError = module.a;
       exports(_setter);
     }, function (module) {
       DOM = module.DOM;
@@ -32,7 +32,9 @@ System.register(['./chunk.js', 'aurelia-pal', 'aurelia-dependency-injection', 'a
               this.centerHorizontalOnly = false;
               this.rejectOnCancel = false;
               this.ignoreTransitions = false;
-              this.restoreFocus = function (lastActiveElement) { return lastActiveElement.focus(); };
+              this.restoreFocus = function (lastActiveElement) { if (lastActiveElement) {
+                  lastActiveElement.focus();
+              } };
           }
           return DefaultDialogSettings;
       }()));

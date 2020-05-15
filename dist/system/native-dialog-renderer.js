@@ -1,4 +1,4 @@
-System.register(['aurelia-pal', 'aurelia-dependency-injection', './ux-dialog-renderer.js'], function (exports, module) {
+System.register(['aurelia-pal', 'aurelia-dependency-injection', './ux-dialog-renderer.js'], function (exports) {
     'use strict';
     var DOM, transient, transitionEvent, hasTransition;
     return {

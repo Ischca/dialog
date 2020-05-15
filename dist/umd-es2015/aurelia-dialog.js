@@ -23,7 +23,9 @@
           this.centerHorizontalOnly = false;
           this.rejectOnCancel = false;
           this.ignoreTransitions = false;
-          this.restoreFocus = (lastActiveElement) => lastActiveElement.focus();
+          this.restoreFocus = (lastActiveElement) => { if (lastActiveElement) {
+              lastActiveElement.focus();
+          } };
       }
   }
 
